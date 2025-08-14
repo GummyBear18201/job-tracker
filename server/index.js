@@ -7,6 +7,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// Database connection setup
 const port = 5000;
 const db = new pg.Client({
   user: "postgres",
