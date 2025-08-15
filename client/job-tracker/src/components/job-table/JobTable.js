@@ -88,6 +88,13 @@ function JobTable(props) {
       <div className="flex flex-row flex-1">
         <div className="w-1/3 p-4">
           <GoalTracker userID={props.userId} total={totalJobs} />
+          {/* <button
+            onClick={() => {
+              navigate("/ai-analyzer");
+            }}
+          >
+            AI analyzer
+          </button> */}
         </div>
 
         <div className="w-2/3 p-4 flex flex-col">
