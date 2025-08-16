@@ -22,7 +22,7 @@ function LogInForm(props) {
       return;
     }
     if (!props.isRegistered) {
-      fetch("http://localhost:5000/logIn/signUp", {
+      fetch("http://192.168.0.172:5000/logIn/signUp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function LogInForm(props) {
         })
         .catch((err) => console.error("POST failed:", err));
     } else {
-      fetch("http://localhost:5000/logIn/signIn", {
+      fetch("http://192.168.0.172:5000/logIn/signIn", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

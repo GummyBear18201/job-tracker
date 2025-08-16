@@ -10,7 +10,7 @@ function JobTable(props) {
   const [totalJobs, setTotalJobs] = useState(0);
   const navigate = useNavigate();
   const fetchJobs = () => {
-    fetch(`http://localhost:5000/api/jobTable/${props.userId}`)
+    fetch(`http://192.168.0.172:5000/api/jobTable/${props.userId}`)
       .then((res) => res.json())
       .then((data) => setTable(Array.isArray(data) ? data : []));
   };
@@ -37,7 +37,7 @@ function JobTable(props) {
       user_id: props.userId,
     };
 
-    fetch("http://localhost:5000/api/jobTable/add", {
+    fetch("http://192.168.0.172:5000/api/jobTable/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function JobTable(props) {
   }
   function deleteItem(id) {
     console.log("Delete item with id:", id);
-    fetch(`http://localhost:5000/api/jobTable/delete/${id}`, {
+    fetch(`http://192.168.0.172:5000/api/jobTable/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -88,13 +88,6 @@ function JobTable(props) {
       <div className="flex flex-row flex-1">
         <div className="w-1/3 p-4">
           <GoalTracker userID={props.userId} total={totalJobs} />
-          {/* <button
-            onClick={() => {
-              navigate("/ai-analyzer");
-            }}
-          >
-            AI analyzer
-          </button> */}
         </div>
 
         <div className="w-2/3 p-4 flex flex-col">

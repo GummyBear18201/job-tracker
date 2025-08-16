@@ -22,7 +22,7 @@ function Entry(props) {
     };
     console.log("Sending updated data:", jobData);
 
-    fetch("http://localhost:5000/api/jobTable/edit", {
+    fetch("http://192.168.0.172:5000/api/jobTable/edit", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

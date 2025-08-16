@@ -1,10 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
-import pg from "pg";
 import cors from "cors";
 import jobTableRoutes from "./routes/jobTableRoutes.js";
 import registrationRoutes from "./routes/registrationRoutes.js";
 import settingRoutes from "./routes/settingRoutes.js";
+import generateCoverLetter from "./routes/generateCoverLetter.js";
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -19,6 +19,9 @@ app.use("/api/jobTable", jobTableRoutes);
 app.use("/logIn", registrationRoutes);
 
 app.use("/setting", settingRoutes);
+
+app.use("/api", generateCoverLetter);
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

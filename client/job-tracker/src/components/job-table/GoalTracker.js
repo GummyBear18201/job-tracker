@@ -9,7 +9,7 @@ function GoalTracker(props) {
   const [goal, setGoal] = useState(50);
   const [tempGoal, setTempGoal] = useState(goal);
   useEffect(() => {
-    fetch(`http://localhost:5000/setting/getGoal/${props.userID}`)
+    fetch(`http://192.168.0.172:5000/setting/getGoal/${props.userID}`)
       .then((res) => res.json())
       .then((goal) => setGoal(goal || 50));
   }, [props.userID]);
@@ -22,7 +22,7 @@ function GoalTracker(props) {
       setGoal(Number(tempGoal));
       setEditing(false);
 
-      fetch("http://localhost:5000/setting/editGoal", {
+      fetch("http://192.168.0.172:5000/setting/editGoal", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: props.userID, goal: Number(tempGoal) }),

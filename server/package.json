@@ -13,10 +13,14 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@google/genai": "^1.14.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "express-fileupload": "^1.5.2",
+    "multer": "^2.0.2",
+    "pdfjs-dist": "^5.4.54",
     "pg": "^8.16.3"
   }
 }
